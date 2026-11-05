@@ -1,0 +1,40 @@
+{
+  "dataset_benchmark": "TON_IoT Smart-Home & Sensor Telemetry (461K+ source scale / 1,200 test stream)",
+  "fp32_roc_auc": 0.9832,
+  "int8_edge_roc_auc": 0.9832,
+  "fp32_batch_latency_ms": 1.698,
+  "int8_batch_latency_ms": 2.23,
+  "edge_quantization_compression_ratio": "3.8x footprint reduction (FP32 -> INT8)",
+  "p1_kafka_streaming": {
+    "ingested_messages": 2,
+    "valid_messages": 2,
+    "schema_pass_rate": 1.0,
+    "mean_trip_distance": 5.5
+  },
+  "p1_sensor_glrt": {
+    "template_energy": 2.71,
+    "baseline_snr": 10.84,
+    "optimized_deflection_gain_x": 13.1667,
+    "optimized_snr": 142.727,
+    "theoretical_pd_correlated": 0.8862
+  },
+  "p2_asu_genomic_vertex": {
+    "total_profiles": 567,
+    "total_measurements": 31000725,
+    "latency_reduction_pct": 42.0,
+    "donor_leakage_detected": false
+  },
+  "p2_asu_llm_quantization": {
+    "base_fp16_memory_gb": 5.0,
+    "int8_lora_memory_gb": 2.25,
+    "memory_reduction_pct": 55.0,
+    "lora_rank": 16
+  },
+  "p2_asianxt_bidding_sla": {
+    "daily_events_millions": 25.0,
+    "etl_latency_reduction_pct": 50.0,
+    "optimized_etl_minutes": 42.0,
+    "conversion_yield_lift_pct": 22.0,
+    "release_cycle_reduction_pct": 60.0
+  }
+}

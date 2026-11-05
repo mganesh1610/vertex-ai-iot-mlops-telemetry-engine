@@ -1,0 +1,12 @@
+image: python:3.11-slim
+
+pipelines:
+  default:
+    - step:
+        name: Unit & Integration Tests + Drift Gate
+        script:
+          - python3 -m unittest discover -s tests -p "test_*.py" -v
+    - step:
+        name: Compile Vertex AI Pipeline & Push GKE Image
+        script:
+          - python3 -c "from src.vertex_pipeline import compile_vertex_pipeline_spec; import json; print(json.dumps(compile_vertex_pipeline_spec(), indent=2))"
